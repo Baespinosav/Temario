@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario - Estudio Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Estudio Interactivo - Temario PDI</h1>
+            <nav>
+                <button id="btn-info" class="active">Ver Información</button>
+                <button id="btn-quiz">Realizar Prueba</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Sección de Información (Visible por defecto) -->
+            <section id="info-section">
+                <h2>Contenido del Temario</h2>
+
+                <nav class="index-nav">
+                    <h3>Índice de Temas:</h3>
+                    <ul>
+                        <li><a href="#topic1">1. Conceptos básicos de Conectividad y redes</a></li>
+                        <li><a href="#topic2">2. Reconocimiento y manejo de principales Sistemas Operativos</a></li>
+                        <li><a href="#topic3">3. Identificación de virus y fundamentos de malware</a></li>
+                        <li><a href="#topic4">4. Interacción con software de ofimática</a></li>
+                        <li><a href="#topic5">5. Identificación de dispositivos computacionales, hardware y redes</a></li>
+                        <li><a href="#topic6">6. Conceptos básicos de Seguridad de la Información y Ciberseguridad</a></li>
+                        <li><a href="#topic7">7. Relación y nociones de motores de bases de datos más conocidas</a></li>
+                        <li><a href="#topic8">8. Definiciones de principales técnicas de fraudes informáticos</a></li>
+                        <li><a href="#topic9">9. Conceptos en la Ley 21.459 de delitos informáticos (Chile)</a></li>
+                    </ul>
+                </nav>
+
+                <article id="topic1" class="topic-content">
+                    <h3>1. Conceptos básicos de Conectividad y redes</h3>
+                    <p>Las redes informáticas son conjuntos de dispositivos interconectados que permiten compartir recursos (archivos, impresoras, conexión a Internet) e información. La conectividad es la capacidad de estos dispositivos para comunicarse entre sí.</p>
+                    <h4>Conceptos Clave:</h4>
+                    <ul>
+                        <li><strong>Dirección IP (Internet Protocol):</strong> Identificador lógico y único asignado a cada dispositivo dentro de una red para permitir su localización y comunicación.
+                            <ul>
+                                <li><strong>IPv4:</strong> Formato de 32 bits (ej: 192.168.1.100), agotándose.</li>
+                                <li><strong>IPv6:</strong> Formato de 128 bits (ej: 2001:0db8:85a3:0000:0000:8a2e:0370:7334), diseñado para reemplazar IPv4 y ofrecer un espacio de direcciones mucho mayor.</li>
+                                <li><strong>Pública vs. Privada:</strong> Las IPs públicas son únicas en Internet y asignadas por ISPs. Las IPs privadas (rangos como 10.x.x.x, 172.16-31.x.x, 192.168.x.x) se usan dentro de redes locales y no son enrutables en Internet directamente.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Máscara de Subred:</strong> Define qué porción de una dirección IP corresponde a la red y cuál al host. Permite segmentar redes grandes en subredes más pequeñas y manejables (ej: 255.255.255.0 para una red /24).</li>
+                        <li><strong>Puerta de Enlace (Gateway):</strong> Dispositivo (normalmente un router) que actúa como punto de salida de una red local hacia otras redes (como Internet). Los dispositivos de la LAN envían tráfico destinado a redes externas a la puerta de enlace.</li>
+                        <li><strong>DNS (Domain Name System):</strong> Sistema jerárquico y distribuido que traduce nombres de dominio legibles por humanos (ej: www.google.cl) en direcciones IP numéricas que las máquinas entienden. Es como la "guía telefónica" de Internet.</li>
+                        <li><strong>DHCP (Dynamic Host Configuration Protocol):</strong> Protocolo que permite a un servidor asignar automáticamente direcciones IP y otra información de configuración de red (máscara, gateway, DNS) a los dispositivos clientes, simplificando la administración.</li>
+                        <li><strong>Dirección MAC (Media Access Control):</strong> Identificador físico único de 48 bits asignado a la tarjeta de red (NIC) por el fabricante. Opera en la capa de enlace de datos.</li>
+                    </ul>
+                     <h4>Modelos de Red:</h4>
+                    <ul>
+                        <li><strong>Modelo OSI (Open Systems Interconnection):</strong> Modelo conceptual de 7 capas (Física, Enlace de Datos, Red, Transporte, Sesión, Presentación, Aplicación) que estandariza las funciones de comunicación de red.</li>
+                        <li><strong>Modelo TCP/IP:</strong> Modelo más práctico y ampliamente utilizado, con 4 capas (Acceso a Red/Enlace, Internet, Transporte, Aplicación). Describe los protocolos fundamentales de Internet.</li>
+                    </ul>
+                    <h4>Protocolos Fundamentales:</h4>
+                    <ul>
+                        <li><strong>Capa de Transporte:</strong>
+                            <ul>
+                                <li><strong>TCP (Transmission Control Protocol):</strong> Orientado a la conexión, fiable (confirma recepción, retransmite paquetes perdidos), garantiza entrega ordenada. Usado para web (HTTP/S), email (SMTP), transferencias de archivos (FTP).</li>
+                                <li><strong>UDP (User Datagram Protocol):</strong> No orientado a la conexión, rápido, ligero, pero no fiable (sin confirmación ni garantía de orden). Usado para streaming (video/voz), juegos online, DNS, DHCP.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Capa de Aplicación:</strong>
+                            <ul>
+                                <li><strong>HTTP/HTTPS:</strong> Protocolo para transferencia de hipertexto (páginas web). HTTPS añade cifrado (SSL/TLS) para seguridad.</li>
+                                <li><strong>FTP/SFTP/FTPS:</strong> Protocolo para transferencia de archivos. SFTP (SSH File Transfer Protocol) y FTPS (FTP Secure) añaden seguridad.</li>
+                                <li><strong>SMTP, POP3, IMAP:</strong> Protocolos para envío (SMTP) y recepción (POP3 - descarga, IMAP - sincroniza) de correo electrónico.</li>
+                                <li><strong>SSH (Secure Shell):</strong> Protocolo para acceso remoto seguro a terminales y transferencia de archivos (usado por SFTP).</li>
+                                <li><strong>Telnet:</strong> Protocolo antiguo de acceso remoto a terminales, inseguro (envía datos en texto plano).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>Tipos de Redes por Alcance:</h4>
+                    <ul>
+                        <li><strong>PAN (Personal Area Network):</strong> Corto alcance (ej: Bluetooth conectando teléfono y audífonos).</li>
+                        <li><strong>LAN (Local Area Network):</strong> Área limitada (hogar, oficina, edificio). Alta velocidad.</li>
+                        <li><strong>WLAN (Wireless Local Area Network):</strong> LAN que usa tecnología inalámbrica (Wi-Fi).</li>
+                        <li><strong>MAN (Metropolitan Area Network):</strong> Cubre un área metropolitana (ciudad).</li>
+                        <li><strong>WAN (Wide Area Network):</strong> Cubre áreas geográficas extensas (países, continentes). Internet es el ejemplo más grande de WAN.</li>
+                    </ul>
+                    <h4>Topologías Físicas de Red:</h4>
+                     <ul>
+                         <li><strong>Bus:</strong> Todos los nodos conectados a un cable central. Antigua, propensa a fallos si el cable se corta.</li>
+                         <li><strong>Anillo:</strong> Nodos conectados en círculo. Mejor rendimiento que Bus, pero fallo de un nodo puede afectar la red.</li>
+                         <li><strong>Estrella:</strong> Todos los nodos conectados a un dispositivo central (hub/switch). La más común en LANs modernas. Fallo de un nodo no afecta a otros. Fallo del centro sí.</li>
+                         <li><strong>Malla (Mesh):</strong> Nodos interconectados entre sí (total o parcialmente). Alta redundancia y tolerancia a fallos, pero costosa y compleja. Común en WANs y algunas WLANs modernas.</li>
+                         <li><strong>Árbol (Jerárquica):</strong> Combinación de topologías en estrella.</li>
+                         <li><strong>Híbrida:</strong> Combinación de dos o más topologías.</li>
+                     </ul>
+                     <h4>Medios de Transmisión:</h4>
+                     <ul>
+                        <li><strong>Cable de Par Trenzado (UTP/STP):</strong> Común en LANs (Ethernet). Categorías (Cat 5e, Cat 6, Cat 6a, etc.) definen velocidad y ancho de banda. UTP (Unshielded) es más común, STP (Shielded) ofrece protección contra interferencias. Conector RJ-45.</li>
+                        <li><strong>Cable Coaxial:</strong> Usado en TV por cable e internet por cable. Más resistente a interferencias que UTP.</li>
+                        <li><strong>Fibra Óptica:</strong> Transmite datos como pulsos de luz. Mayor velocidad, mayor distancia, inmune a interferencias electromagnéticas. Más costosa. Común en backbones de red, WANs y conexiones de alta velocidad a hogares (FTTH).</li>
+                        <li><strong>Inalámbrico (Wi-Fi, Bluetooth, Celular):</strong> Usa ondas de radio. Conveniente pero susceptible a interferencias y problemas de seguridad si no se configura bien. Estándares Wi-Fi (802.11a/b/g/n/ac/ax) definen velocidades y frecuencias.</li>
+                     </ul>
+                     <h4>Conceptos Adicionales:</h4>
+                     <ul>
+                         <li><strong>NAT (Network Address Translation):</strong> Técnica usada por routers para permitir que múltiples dispositivos en una LAN privada compartan una única dirección IP pública para acceder a Internet.</li>
+                         <li><strong>VPN (Virtual Private Network):</strong> Crea un "túnel" cifrado sobre una red pública (como Internet) para conectar de forma segura dispositivos o redes remotas.</li>
+                         <li><strong>Firewall:</strong> Sistema de seguridad (hardware o software) que controla el tráfico de red entrante y saliente basándose en reglas predefinidas, actuando como barrera entre una red confiable y una no confiable.</li>
+                     </ul>
+                </article>
+
+                <article id="topic2" class="topic-content">
+                    <h3>2. Reconocimiento y manejo de principales Sistemas Operativos</h3>
+                    <p>Un Sistema Operativo (SO) es el software esencial que actúa como intermediario entre el hardware del computador y el usuario o las aplicaciones. Gestiona todos los recursos y proporciona servicios fundamentales.</p>
+                    <h4>Funciones Principales del SO:</h4>
+                    <ul>
+                        <li><strong>Gestión del Procesador (CPU):</strong> Asigna tiempo de CPU a los diferentes procesos en ejecución (planificación o scheduling).</li>
+                        <li><strong>Gestión de Memoria (RAM):</strong> Asigna y libera espacio en la memoria principal (RAM) para los procesos y datos. Incluye técnicas como la memoria virtual (uso de disco como extensión de RAM).</li>
+                        <li><strong>Gestión de Almacenamiento Secundario (Archivos):</strong> Organiza, almacena y recupera archivos en discos duros, SSDs, etc. Implementa sistemas de archivos.</li>
+                        <li><strong>Gestión de Entrada/Salida (I/O):</strong> Controla la comunicación con dispositivos periféricos (teclado, mouse, pantalla, impresora, red) a través de drivers.</li>
+                        <li><strong>Gestión de Procesos y Tareas:</strong> Crea, termina, suspende y reanuda procesos. Permite la multitarea.</li>
+                        <li><strong>Interfaz de Usuario (UI):</strong> Proporciona una forma para que el usuario interactúe con el sistema (GUI gráfica o CLI de línea de comandos).</li>
+                        <li><strong>Seguridad y Permisos:</strong> Controla el acceso a recursos (archivos, dispositivos) mediante cuentas de usuario, grupos y permisos.</li>
+                        <li><strong>Gestión de Red:</strong> Proporciona las capacidades para conectarse y comunicarse a través de redes.</li>
+                    </ul>
+                    <h4>Principales Sistemas Operativos de Escritorio/Servidor:</h4>
+                    <ul>
+                        <li><strong>Microsoft Windows:</strong>
+                            <ul>
+                                <li>Versiones: Windows 10, Windows 11 (escritorio), Windows Server (servidores).</li>
+                                <li>Características: Dominante en escritorios, amplia compatibilidad de hardware/software, interfaz gráfica (Explorador de Windows), sistema de archivos principal <strong>NTFS</strong> (con soporte para permisos avanzados, compresión, cifrado EFS, journaling), registro centralizado (Registry), herramientas como Panel de Control/Configuración, Administrador de Tareas, PowerShell (CLI avanzada).</li>
+                                <li>Manejo: Uso del Explorador, Panel de Control/Configuración, comandos básicos de `cmd` (`dir`, `cd`, `ipconfig`, `ping`) y PowerShell.</li>
+                            </ul>
+                        </li>
+                        <li><strong>macOS:</strong>
+                            <ul>
+                                <li>Desarrollado por Apple para sus Mac.</li>
+                                <li>Características: Basado en Unix (certificado), núcleo XNU (híbrido Mach/BSD), interfaz gráfica Aqua (Finder), fuerte enfoque en diseño, usabilidad y ecosistema Apple. Sistema de archivos <strong>APFS</strong> (Apple File System, optimizado para SSD) o HFS+. Herramientas: Finder, Preferencias del Sistema, Monitor de Actividad, Terminal (CLI potente, similar a Linux).</li>
+                                <li>Manejo: Uso del Finder, Preferencias, comandos Unix en Terminal (`ls`, `cd`, `pwd`, `ifconfig`, `diskutil`).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Linux:</strong>
+                            <ul>
+                                <li>Núcleo (Kernel) de código abierto creado por Linus Torvalds. Múltiples <strong>distribuciones</strong> (Ubuntu, Debian, Fedora, CentOS/RHEL, Arch Linux, Mint) que empaquetan el kernel con software adicional (entorno de escritorio, utilidades, gestor de paquetes).</li>
+                                <li>Características: Muy estable, configurable, popular en servidores, supercomputadoras, desarrollo, IoT. Fuerte cultura de línea de comandos (Shells como Bash, Zsh). Entornos de escritorio variados (GNOME, KDE Plasma, XFCE). Sistemas de archivos comunes: <strong>ext4</strong> (muy robusto, con journaling), XFS (alto rendimiento), Btrfs (moderno, con snapshots). Estructura de directorios estándar (FHS - Filesystem Hierarchy Standard: /bin, /etc, /home, /var, /usr). Gestores de paquetes (APT para Debian/Ubuntu, YUM/DNF para Fedora/CentOS).</li>
+                                <li>Manejo: Uso del entorno gráfico, comandos esenciales en Terminal (`ls`, `cd`, `pwd`, `mkdir`, `rm`, `cp`, `mv`, `grep`, `find`, `ps`, `top`, `ip`, `sudo`, `apt`/`yum`/`dnf`).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                     <h4>Sistemas Operativos Móviles:</h4>
+                    <ul>
+                        <li><strong>Android (Google):</strong> Basado en el kernel Linux, código abierto (AOSP), dominante en smartphones. Altamente personalizable por fabricantes. Usa máquina virtual (ART) para ejecutar apps (Java/Kotlin).</li>
+                        <li><strong>iOS (Apple):</strong> Para iPhone/iPad. Sistema cerrado, basado en macOS (Unix), enfocado en rendimiento, seguridad y ecosistema Apple.</li>
+                    </ul>
+                    <h4>Conceptos Fundamentales Adicionales:</h4>
+                    <ul>
+                        <li><strong>Kernel vs Shell:</strong> El Kernel es el núcleo del SO, interactúa directamente con el hardware. El Shell es la interfaz (CLI o parte de la GUI) que permite al usuario interactuar con el kernel.</li>
+                        <li><strong>Sistema de Archivos (File System):</strong> Estructura lógica que el SO usa para organizar y gestionar archivos en el almacenamiento (NTFS, APFS, ext4, FAT32). Características importantes: journaling (recuperación tras fallos), permisos, tamaño máximo de archivo/volumen.</li>
+                        <li><strong>Proceso vs Hilo (Thread):</strong> Un proceso es una instancia de un programa en ejecución con su propio espacio de memoria. Un hilo es una unidad de ejecución dentro de un proceso, compartiendo memoria con otros hilos del mismo proceso (permite concurrencia).</li>
+                        <li><strong>Virtualización:</strong> Crear versiones virtuales de recursos (SO, servidores, almacenamiento, redes) sobre hardware físico. Permite ejecutar múltiples SOs en una sola máquina (ej: VMware, VirtualBox).</li>
+                        <li><strong>Contenedores:</strong> Forma de virtualización a nivel de SO. Empaquetan una aplicación y sus dependencias, compartiendo el kernel del SO anfitrión. Más ligeros y rápidos que las VMs (ej: Docker, Kubernetes).</li>
+                         <li><strong>Boot Process (Proceso de Arranque):</strong> Secuencia al encender el PC: Power On -> BIOS/UEFI inicializa hardware (POST) -> Carga el Bootloader desde un disco -> El Bootloader carga el Kernel del SO -> El Kernel inicializa el resto del sistema (drivers, servicios) -> Se inicia la interfaz de usuario.</li>
+                    </ul>
+                </article>
+
+                 <article id="topic3" class="topic-content">
+                    <h3>3. Identificación de virus y fundamentos de malware</h3>
+                    <p>Malware (Malicious Software) es cualquier programa o código diseñado para dañar, interrumpir, robar o, en general, realizar acciones ilegítimas en sistemas informáticos. Su identificación y comprensión son cruciales para la ciberseguridad.</p>
+                    <h4>Tipos Principales de Malware:</h4>
+                    <ul>
+                        <li><strong>Virus:</strong> Código que se adjunta a un archivo o programa ejecutable legítimo. Requiere que ese archivo/programa se ejecute para activarse y replicarse, infectando otros archivos. Necesita un "huésped".</li>
+                        <li><strong>Gusano (Worm):</strong> Malware autónomo que se replica y propaga activamente a través de redes, explotando vulnerabilidades de seguridad en otros sistemas. No necesita un archivo huésped ni intervención humana directa para propagarse una vez iniciado. Puede consumir ancho de banda y recursos.</li>
+                        <li><strong>Troyano (Trojan Horse):</strong> Se disfraza de software legítimo o útil para engañar al usuario y lograr su instalación. Una vez dentro, ejecuta una carga útil maliciosa (payload), como robar información, dar acceso remoto (backdoor) o descargar otro malware. No se replican por sí mismos.</li>
+                        <li><strong>Ransomware:</strong> Cifra los archivos de la víctima o bloquea el acceso al sistema operativo, exigiendo un pago (rescate), generalmente en criptomonedas, para restaurar el acceso. Variantes modernas pueden también robar datos y amenazar con publicarlos (doxxing).</li>
+                        <li><strong>Spyware:</strong> Diseñado para espiar las actividades del usuario y recopilar información sin consentimiento: historial de navegación, credenciales, datos personales, pulsaciones de teclado (<strong>Keyloggers</strong>), capturas de pantalla, etc.</li>
+                        <li><strong>Adware:</strong> Muestra publicidad no deseada (pop-ups, banners, redirecciones). Aunque a menudo es más molesto que destructivo, puede afectar el rendimiento y a veces actúa como puerta de entrada para otro malware.</li>
+                        <li><strong>Rootkit:</strong> Colección de herramientas de software diseñadas para obtener acceso no autorizado a nivel de administrador (root) y ocultar su presencia y la de otro malware, modificando funciones del SO o incluso el firmware. Muy difíciles de detectar y eliminar.</li>
+                        <li><strong>Botnet:</strong> Red de computadoras infectadas ("bots" o "zombies") bajo el control remoto de un atacante ("botmaster"). Se utilizan para lanzar ataques coordinados (DDoS), enviar spam masivo, minar criptomonedas, realizar fraude de clics, etc.</li>
+                        <li><strong>Wiper:</strong> Malware destructivo cuyo único propósito es borrar datos de forma irreversible del sistema infectado.</li>
+                         <li><strong>Fileless Malware (Malware sin Archivo):</strong> Opera en la memoria (RAM) sin escribir archivos ejecutables en el disco, utilizando herramientas legítimas del sistema (como PowerShell o WMI) para sus actividades maliciosas. Más difícil de detectar por antivirus tradicionales basados en archivos.</li>
+                    </ul>
+                     <h4>Vectores Comunes de Infección (Cómo entra el Malware):</h4>
+                     <ul>
+                        <li><strong>Correo Electrónico (Email):</strong> El vector más común. A través de archivos adjuntos maliciosos (ej: .exe disfrazado, documentos Office con macros) o enlaces a sitios de phishing o que descargan malware.</li>
+                        <li><strong>Descargas de Software:</strong> Desde sitios web no oficiales, redes P2P (torrents), software pirata ("cracks", keygens).</li>
+                        <li><strong>Medios Extraíbles:</strong> Dispositivos USB, discos duros externos infectados que se conectan a un sistema limpio.</li>
+                        <li><strong>Explotación de Vulnerabilidades:</strong> Aprovechar fallos de seguridad en el SO, navegadores, plugins (Java, Flash -obsoleto-), aplicaciones no actualizadas.</li>
+                        <li><strong>Sitios Web Comprometidos:</strong> Mediante "drive-by downloads" (descarga automática al visitar la página) o inyección de scripts maliciosos.</li>
+                        <li><strong>Ingeniería Social:</strong> Engañar al usuario para que descargue/ejecute el malware (ver Tema 8).</li>
+                        <li><strong>Redes Sociales y Mensajería Instantánea:</strong> A través de enlaces o archivos maliciosos compartidos.</li>
+                     </ul>
+                     <h4>Detección y Análisis de Malware:</h4>
+                     <ul>
+                         <li><strong>Basada en Firmas:</strong> El antivirus compara hashes o patrones de código de archivos con una base de datos de malware conocido. Rápido y efectivo contra amenazas conocidas, pero ineficaz contra malware nuevo o modificado (polimórfico).</li>
+                         <li><strong>Basada en Heurística:</strong> Analiza el código o comportamiento en busca de características sospechosas o típicas de malware, incluso si no está en la base de firmas. Puede detectar amenazas nuevas pero es más propenso a falsos positivos.</li>
+                         <li><strong>Basada en Comportamiento:</strong> Monitoriza la ejecución de programas en tiempo real, buscando acciones maliciosas (ej: modificar claves de registro críticas, cifrar archivos masivamente, conectarse a C&C conocidos).</li>
+                         <li><strong>Sandboxing (Análisis Dinámico):</strong> Ejecutar el archivo sospechoso en un entorno virtual aislado y seguro (sandbox) para observar su comportamiento sin riesgo para el sistema real.</li>
+                         <li><strong>Análisis Estático:</strong> Examinar el código del malware sin ejecutarlo (desensamblado, análisis de strings, metadatos).</li>
+                         <li><strong>Indicadores de Compromiso (IoC):</strong> Artefactos observables que indican una intrusión (hashes de archivos maliciosos, direcciones IP/dominios de C&C, claves de registro específicas, patrones de tráfico de red anómalos).</li>
+                     </ul>
+                      <h4>Prevención y Mitigación:</h4>
+                     <ul>
+                        <li><strong>Software Antivirus/Antimalware/Endpoint Protection:</strong> Mantenerlo instalado y actualizado (tanto el software como las firmas).</li>
+                        <li><strong>Actualizaciones (Patching):</strong> Mantener el SO, navegador y todas las aplicaciones actualizadas para corregir vulnerabilidades.</li>
+                        <li><strong>Firewall:</strong> Utilizar firewalls de red y personales para bloquear conexiones no autorizadas.</li>
+                        <li><strong>Precaución del Usuario:</strong> Ser escéptico con correos, enlaces, adjuntos y descargas. Verificar la fuente. No habilitar macros de documentos no confiables.</li>
+                        <li><strong>Contraseñas Seguras y MFA:</strong> Usar contraseñas complejas y únicas, y habilitar la Autenticación Multifactor siempre que sea posible.</li>
+                        <li><strong>Copias de Seguridad (Backups):</strong> Realizar copias de seguridad periódicas y probar su restauración. Almacenar algunas offline o en la nube segura. Esencial contra ransomware.</li>
+                        <li><strong>Principio de Mínimo Privilegio:</strong> No usar cuentas de administrador para tareas diarias.</li>
+                        <li><strong>Segmentación de Red:</strong> Aislar sistemas críticos en redes separadas.</li>
+                        <li><strong>Educación y Concienciación:</strong> Entrenar a los usuarios sobre las amenazas y buenas prácticas.</li>
+                     </ul>
+                </article>
+
+                <article id="topic4" class="topic-content">
+                    <h3>4. Interacción con software de ofimática</h3>
+                    <p>El software de ofimática (Office Suite) comprende un conjunto de programas diseñados para automatizar y optimizar tareas comunes en entornos de oficina y personales, como la creación de documentos, análisis de datos y presentaciones.</p>
+                    <h4>Suites de Ofimática Principales:</h4>
+                    <ul>
+                        <li><strong>Microsoft Office (Ahora Microsoft 365 para suscripción):</strong>
+                            <ul>
+                                <li>Plataforma dominante en el mundo corporativo. Disponible como software de escritorio (compra única o suscripción) y versión web/móvil (Microsoft 365).</li>
+                                <li><strong>Word:</strong> Procesador de textos avanzado (.docx). Funciones: formato, estilos, plantillas, tablas de contenido, índices, control de cambios, combinación de correspondencia (mail merge), revisión ortográfica/gramatical.</li>
+                                <li><strong>Excel:</strong> Hoja de cálculo potente (.xlsx). Funciones: Fórmulas (matemáticas, lógicas, texto, búsqueda), funciones (SUMA, PROMEDIO, BUSCARV/VLOOKUP, SI/IF), formato condicional, gráficos, tablas dinámicas (pivot tables) para análisis de datos, ordenación, filtrado, validación de datos.</li>
+                                <li><strong>PowerPoint:</strong> Creación de presentaciones (.pptx). Funciones: Diapositivas, plantillas, temas, transiciones, animaciones, inserción de multimedia (imágenes, video, audio), notas del orador, patrón de diapositivas.</li>
+                                <li><strong>Outlook:</strong> Cliente de correo electrónico, calendario, gestor de contactos y tareas.</li>
+                                <li><strong>Access:</strong> Sistema de gestión de bases de datos relacionales (para escritorio, .accdb). Creación de tablas, consultas, formularios, informes.</li>
+                                <li><strong>OneNote:</strong> Bloc de notas digital, organización flexible, sincronización.</li>
+                                <li><strong>Teams:</strong> Plataforma de colaboración (chat, reuniones, llamadas, compartición de archivos).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Google Workspace (Antes G Suite):</strong>
+                            <ul>
+                                <li>Suite basada en la nube, enfocada en la colaboración en tiempo real. Acceso principal vía navegador web.</li>
+                                <li><strong>Docs:</strong> Procesador de textos colaborativo. Funciones similares a Word, excelente coedición.</li>
+                                <li><strong>Sheets:</strong> Hoja de cálculo colaborativa. Funciones similares a Excel, buena integración con otros servicios Google.</li>
+                                <li><strong>Slides:</strong> Creación de presentaciones colaborativas.</li>
+                                <li><strong>Gmail:</strong> Servicio de correo electrónico web.</li>
+                                <li><strong>Calendar, Drive, Meet, Chat, Forms, etc.</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>LibreOffice (Código Abierto):</strong>
+                            <ul>
+                                <li>Alternativa gratuita y de código abierto a Microsoft Office. Instalable en Windows, macOS, Linux.</li>
+                                <li><strong>Writer:</strong> Procesador de textos (.odt). Alta compatibilidad con .docx.</li>
+                                <li><strong>Calc:</strong> Hoja de cálculo (.ods). Compatible con .xlsx.</li>
+                                <li><strong>Impress:</strong> Software de presentaciones (.odp). Compatible con .pptx.</li>
+                                <li><strong>Base:</strong> Gestor de bases de datos.</li>
+                                <li><strong>Draw:</strong> Editor de gráficos vectoriales.</li>
+                                <li><strong>Math:</strong> Editor de fórmulas matemáticas.</li>
+                                <li>Ventajas: Gratuito, código abierto, multiplataforma. Desventajas: Interfaz puede ser menos pulida, compatibilidad con formatos complejos de MS Office a veces imperfecta.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Otras Suites:</strong> Apple iWork (Pages, Numbers, Keynote - para macOS/iOS), WPS Office.</li>
+                    </ul>
+                    <h4>Habilidades Clave de Interacción:</h4>
+                    <ul>
+                        <li><strong>Formato y Estilo:</strong> Aplicar formato a texto (fuente, tamaño, color, negrita, cursiva), párrafos (alineación, sangría, espaciado), usar estilos predefinidos y personalizados para consistencia.</li>
+                        <li><strong>Manejo de Estructuras:</strong> Crear y gestionar tablas, listas (numeradas, viñetas), encabezados/pies de página, saltos de página/sección.</li>
+                        <li><strong>Fórmulas y Funciones (Hojas de Cálculo):</strong> Entender la sintaxis de fórmulas (=), referencias a celdas (relativas, absolutas, mixtas), usar funciones comunes (SUM, AVERAGE, COUNT, IF, VLOOKUP/HLOOKUP, etc.), anidar funciones.</li>
+                        <li><strong>Análisis de Datos (Hojas de Cálculo):</strong> Ordenar y filtrar datos, aplicar formato condicional, crear gráficos apropiados (barras, líneas, circular), generar y manipular tablas dinámicas.</li>
+                        <li><strong>Diseño de Presentaciones:</strong> Elegir plantillas/temas adecuados, estructurar contenido de forma clara y concisa, usar transiciones y animaciones con moderación, insertar y formatear imágenes y otros elementos multimedia.</li>
+                        <li><strong>Gestión de Correo Electrónico:</strong> Redactar correos profesionales, usar CC/CCO adecuadamente, organizar correos (carpetas, etiquetas, reglas), gestionar calendario y reuniones.</li>
+                        <li><strong>Colaboración:</strong> Usar control de cambios, añadir comentarios, compartir documentos de forma segura (permisos), coeditar en tiempo real (en suites basadas en nube).</li>
+                        <li><strong>Importación/Exportación y Formatos:</strong> Guardar archivos en diferentes formatos (.docx, .pdf, .xlsx, .csv, .odt, etc.), entender implicaciones de compatibilidad, importar/exportar datos (ej: CSV a Excel).</li>
+                        <li><strong>Automatización Básica (Macros):</strong> Grabar o escribir macros simples para automatizar tareas repetitivas. <strong>Importante:</strong> Ser consciente de los riesgos de seguridad asociados a la ejecución de macros de fuentes no confiables (pueden contener malware).</li>
+                        <li><strong>Atajos de Teclado:</strong> Conocer y usar atajos comunes (Ctrl+C, Ctrl+V, Ctrl+S, Ctrl+Z, etc.) para aumentar la eficiencia.</li>
+                    </ul>
+                </article>
+
+                <article id="topic5" class="topic-content">
+                     <h3>5. Identificación de dispositivos computacionales, hardware y redes</h3>
+                    <p>Comprender los componentes físicos (hardware) que conforman un sistema informático y los dispositivos que permiten su interconexión en redes es fundamental para el soporte, la administración y la investigación.</p>
+                    <h4>Componentes Internos del Computador (Hardware):</h4>
+                    <ul>
+                        <li><strong>CPU (Central Processing Unit) / Procesador:</strong> El "cerebro". Ejecuta instrucciones y realiza cálculos.
+                            <ul>
+                                <li>Características: Fabricante (Intel, AMD), Modelo (Core i7, Ryzen 5), Velocidad de reloj (GHz), Número de núcleos (cores) y hilos (threads), Memoria caché (L1, L2, L3).</li>
+                            </ul>
+                        </li>
+                        <li><strong>RAM (Random Access Memory) / Memoria Principal:</strong> Almacenamiento volátil (se borra al apagar) de alta velocidad para datos e instrucciones en uso activo por la CPU.
+                            <ul>
+                                <li>Características: Tipo (DDR3, DDR4, DDR5), Capacidad (GB), Velocidad (MHz), Latencia (CL). Se instala en módulos (DIMM/SO-DIMM).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Placa Madre (Motherboard / Mainboard):</strong> Circuito impreso principal que interconecta todos los componentes.
+                            <ul>
+                                <li>Componentes: Socket (para CPU), Ranuras de RAM, Ranuras de expansión (PCIe x16, x1, etc.), Chipset (controla comunicación entre componentes), Conectores de almacenamiento (SATA, M.2), Puertos de E/S (USB, Red, Audio, Video), BIOS/UEFI chip, Conectores de alimentación. Factor de forma (ATX, Micro-ATX, ITX).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Almacenamiento Secundario (No volátil):</strong> Guarda el SO, aplicaciones y datos de forma permanente.
+                            <ul>
+                                <li><strong>HDD (Hard Disk Drive):</strong> Discos magnéticos giratorios. Mayor capacidad por precio, más lento, sensible a golpes.</li>
+                                <li><strong>SSD (Solid State Drive):</strong> Usa memoria flash (NAND). Mucho más rápido, silencioso, resistente, más caro. Interfaces: SATA (más lento), NVMe (sobre PCIe, mucho más rápido, a menudo en formato M.2).</li>
+                                <li><strong>SSHD (Hybrid):</strong> Combina un HDD grande con una pequeña caché SSD para acelerar el acceso a datos frecuentes.</li>
+                            </ul>
+                        </li>
+                         <li><strong>GPU (Graphics Processing Unit) / Tarjeta Gráfica:</strong> Especializada en procesar y renderizar gráficos para mostrarlos en el monitor.
+                            <ul>
+                                <li>Integrada (iGPU): Dentro de la CPU o en la placa madre. Suficiente para tareas básicas y ofimática.</li>
+                                <li>Dedicada (dGPU): Tarjeta separada (NVIDIA GeForce/Quadro, AMD Radeon/Pro) conectada a una ranura PCIe x16. Mucho más potente, necesaria para juegos, diseño 3D, IA. Tiene su propia memoria (VRAM).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fuente de Poder (PSU - Power Supply Unit):</strong> Convierte la corriente alterna (AC) de la pared en corriente continua (DC) de diferentes voltajes (+3.3V, +5V, +12V) para alimentar los componentes.
+                            <ul>
+                                <li>Características: Potencia (Watts - W), Eficiencia (80 Plus Bronze, Silver, Gold, etc.), Modularidad (cables fijos, semi-modulares, modulares).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sistema de Refrigeración:</strong> Disipadores de calor y ventiladores (coolers) para CPU y GPU, ventiladores de caja, refrigeración líquida (AIO o custom loops) para mantener temperaturas operativas seguras.</li>
+                        <li><strong>BIOS/UEFI (Basic Input/Output System / Unified Extensible Firmware Interface):</strong> Firmware almacenado en un chip en la placa madre. Se ejecuta al inicio (POST - Power-On Self-Test) para verificar e inicializar el hardware y luego carga el sistema operativo desde el almacenamiento. UEFI es el sucesor moderno, con interfaz gráfica, arranque más rápido y mejor seguridad (Secure Boot).</li>
+                    </ul>
+                     <h4>Periféricos (Hardware Externo):</h4>
+                    <ul>
+                        <li><strong>De Entrada:</strong> Teclado, Mouse (Ratón), Escáner, Micrófono, Webcam, Lector de códigos de barras, Joystick/Gamepad.</li>
+                        <li><strong>De Salida:</strong> Monitor (Pantalla - LCD, LED, OLED; Resolución, Tasa de refresco Hz), Impresora (Inyección de tinta, Láser, Térmica, Matricial), Altavoces (Parlantes), Auriculares (Audífonos), Proyector.</li>
+                        <li><strong>De Entrada/Salida (Mixtos):</strong> Pantallas táctiles, Impresoras Multifunción (Impresora + Escáner + Copiadora +/- Fax), Headsets (Auriculares + Micrófono), Unidades de almacenamiento externo (Discos duros externos, Pendrives USB).</li>
+                        <li><strong>Puertos y Conectores Comunes:</strong> USB (Type-A, Type-C; 2.0, 3.x, 4/Thunderbolt), HDMI, DisplayPort, VGA (antiguo), DVI (antiguo), Ethernet (RJ-45), Jack de audio 3.5mm.</li>
+                    </ul>
+                    <h4>Dispositivos de Red:</h4>
+                    <ul>
+                        <li><strong>NIC (Network Interface Card) / Tarjeta de Red / Adaptador de Red:</strong> Componente (integrado en placa madre o tarjeta de expansión) que permite al dispositivo conectarse físicamente a la red (puerto Ethernet RJ-45 o antena Wi-Fi). Cada NIC tiene una dirección MAC única.</li>
+                        <li><strong>Router (Enrutador):</strong> Dispositivo de Capa 3 (Red) que interconecta diferentes redes (ej: tu LAN con Internet). Toma decisiones de enrutamiento basadas en direcciones IP para dirigir paquetes a su destino. Funciones comunes en routers domésticos: NAT, DHCP server, Firewall básico, Switch integrado, Punto de Acceso Wi-Fi.</li>
+                        <li><strong>Switch (Conmutador):</strong> Dispositivo de Capa 2 (Enlace de Datos) que conecta múltiples dispositivos dentro de la misma LAN. Aprende las direcciones MAC de los dispositivos conectados a cada puerto y reenvía el tráfico solo al puerto destino específico, mejorando la eficiencia y reduciendo colisiones respecto a los hubs.</li>
+                        <li><strong>Hub (Concentrador):</strong> Dispositivo antiguo de Capa 1 (Física). Simplemente repite la señal eléctrica recibida por un puerto a todos los demás puertos. Ineficiente, genera colisiones, prácticamente obsoleto en redes modernas.</li>
+                        <li><strong>Access Point (AP) / Punto de Acceso Inalámbrico:</strong> Dispositivo que permite a equipos inalámbricos (Wi-Fi) conectarse a una red cableada (LAN). Extiende la cobertura de la red inalámbrica.</li>
+                        <li><strong>Modem (Modulador-Demodulador):</strong> Dispositivo que convierte las señales digitales de tu red local en señales analógicas adecuadas para la línea del proveedor de Internet (ISP) (ej: ADSL, Cable) y viceversa. A menudo integrado con el router en un solo equipo proporcionado por el ISP. Para fibra óptica (FTTH), se usa una ONT (Optical Network Terminal).</li>
+                        <li><strong>Firewall (Hardware):</strong> Dispositivo de seguridad dedicado, más robusto que el firewall básico de un router, que inspecciona y filtra el tráfico de red entre redes según políticas de seguridad definidas.</li>
+                        <li><strong>Repetidor Wi-Fi / Extensor de Rango:</strong> Dispositivo simple que recibe la señal Wi-Fi existente y la retransmite para ampliar la cobertura, aunque a menudo reduce el ancho de banda.</li>
+                        <li><strong>Powerline Adapters:</strong> Utilizan el cableado eléctrico existente en una casa para transmitir datos de red entre dos puntos.</li>
+                    </ul>
+                </article>
+
+                <article id="topic6" class="topic-content">
+                     <h3>6. Conceptos básicos de Seguridad de la Información y Ciberseguridad</h3>
+                    <p>La <strong>Seguridad de la Información</strong> es la disciplina que se encarga de proteger la información y los sistemas que la procesan, almacenan y transmiten, contra accesos no autorizados, uso, divulgación, alteración, interrupción o destrucción. La <strong>Ciberseguridad</strong> es un subconjunto enfocado específicamente en la protección de activos digitales en el ciberespacio.</p>
+                    <h4>Pilares Fundamentales (Tríada CIA y más allá):</h4>
+                    <ul>
+                        <li><strong>Confidencialidad:</strong> Asegurar que la información solo sea accesible por entidades (personas, procesos, sistemas) autorizadas. Previene la divulgación no autorizada. Controles: Cifrado, Control de Acceso, Clasificación de la información.</li>
+                        <li><strong>Integridad:</strong> Garantizar la exactitud, completitud y consistencia de la información y los sistemas. Previene modificaciones no autorizadas o accidentales. Controles: Hashing, Firmas Digitales, Control de Versiones, Permisos de escritura.</li>
+                        <li><strong>Disponibilidad:</strong> Asegurar que los sistemas y la información estén operativos y accesibles para los usuarios autorizados cuando se necesiten. Previene interrupciones del servicio. Controles: Redundancia (hardware, red), Copias de Seguridad, Planes de Recuperación ante Desastres (DRP), Protección contra DoS/DDoS.</li>
+                        <li><strong>Autenticación:</strong> Proceso de verificar la identidad declarada de una entidad. ¿Eres quien dices ser? Métodos (Factores):
+                            <ul>
+                                <li>Algo que sabes: Contraseña, PIN.</li>
+                                <li>Algo que tienes: Token físico/móvil, Tarjeta inteligente, Llave USB.</li>
+                                <li>Algo que eres: Biometría (Huella dactilar, reconocimiento facial, iris).</li>
+                                <li><strong>MFA/2FA (Autenticación Multifactor/Dos Factores):</strong> Requiere dos o más factores diferentes para mayor seguridad.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Autorización:</strong> Proceso de conceder o denegar permisos específicos a una entidad autenticada para acceder a recursos o realizar acciones. ¿Qué tienes permiso para hacer? Principio de Mínimo Privilegio: Otorgar solo los permisos estrictamente necesarios. Control de Acceso Basado en Roles (RBAC).</li>
+                        <li><strong>No Repudio:</strong> Proporciona pruebas de que una acción específica fue realizada por una entidad específica, de modo que no pueda negar haberla hecho. Controles: Firmas digitales, Logs de auditoría detallados.</li>
+                        <li><strong>Accounting (Rendición de Cuentas / Auditoría):</strong> Registrar quién hizo qué, cuándo y dónde. Permite rastrear acciones y detectar actividades sospechosas. Logs del sistema, logs de acceso. (A menudo se habla de AAA: Authentication, Authorization, Accounting).</li>
+                    </ul>
+                     <h4>Conceptos de Amenazas y Riesgos:</h4>
+                     <ul>
+                        <li><strong>Amenaza (Threat):</strong> Cualquier circunstancia o evento potencial con la capacidad de causar daño a un activo (información, sistema, red). Pueden ser naturales, accidentales o intencionales (ataques).</li>
+                        <li><strong>Vulnerabilidad (Vulnerability):</strong> Una debilidad en el diseño, implementación, operación o control de un sistema o activo que puede ser explotada por una amenaza.</li>
+                        <li><strong>Riesgo (Risk):</strong> La probabilidad de que una amenaza explote una vulnerabilidad y cause un impacto negativo. Riesgo = Probabilidad x Impacto. La Gestión de Riesgos busca identificar, evaluar y tratar (mitigar, transferir, aceptar, evitar) los riesgos.</li>
+                        <li><strong>Exploit:</strong> Código o técnica específica que aprovecha una vulnerabilidad para realizar una acción no autorizada.</li>
+                        <li><strong>Zero-Day:</strong> Una vulnerabilidad que es desconocida para el fabricante del software o que no tiene parche disponible. Los exploits que la atacan son muy peligrosos.</li>
+                        <li><strong>Incidente de Seguridad:</strong> Un evento adverso confirmado o sospechoso que viola las políticas de seguridad o pone en peligro la CIA de la información.</li>
+                        <li><strong>Respuesta a Incidentes:</strong> Proceso estructurado para manejar incidentes: Preparación, Identificación, Contención, Erradicación, Recuperación, Lecciones Aprendidas.</li>
+                     </ul>
+                     <h4>Tecnologías y Técnicas de Seguridad:</h4>
+                     <ul>
+                        <li><strong>Cifrado (Encriptación):</strong> Transformar datos legibles (texto plano) en ilegibles (texto cifrado) usando un algoritmo y una clave.
+                            <ul>
+                                <li><strong>Simétrico:</strong> Misma clave secreta para cifrar y descifrar (Ej: AES, 3DES). Rápido, adecuado para grandes volúmenes de datos. Desafío: intercambio seguro de la clave.</li>
+                                <li><strong>Asimétrico (Clave Pública):</strong> Par de claves matemáticamente relacionadas: una pública (para cifrar o verificar firma) y una privada (para descifrar o firmar). (Ej: RSA, ECC). Más lento, usado para firmas digitales, intercambio seguro de claves simétricas (Ej: en SSL/TLS), cifrado de mensajes pequeños.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Hashing:</strong> Función matemática irreversible que genera un resumen de longitud fija (hash o digest) a partir de una entrada. Cualquier cambio en la entrada produce un hash diferente. Usado para verificar integridad (comparar hashes) y almacenar contraseñas de forma segura (se almacena el hash, no la contraseña). (Ej: SHA-256, SHA-3; MD5 y SHA-1 son considerados inseguros).</li>
+                        <li><strong>Firma Digital:</strong> Combina hashing y cifrado asimétrico. Se calcula el hash del mensaje y se cifra con la clave privada del remitente. El receptor verifica usando la clave pública del remitente. Garantiza Autenticidad (quién lo envió), Integridad (no fue modificado) y No Repudio.</li>
+                        <li><strong>Certificado Digital (PKI - Public Key Infrastructure):</strong> Documento electrónico emitido por una Autoridad de Certificación (CA) que vincula una clave pública a una identidad (persona, servidor web). Sigue el estándar X.509. Esencial para HTTPS (SSL/TLS), firmas digitales, etc.</li>
+                        <li><strong>SSL/TLS (Secure Sockets Layer / Transport Layer Security):</strong> Protocolos criptográficos que proporcionan comunicaciones seguras sobre una red (ej: HTTPS). Usan certificados digitales y cifrado simétrico/asimétrico.</li>
+                        <li><strong>Firewalls:</strong>
+                            <ul>
+                                <li>Filtrado de paquetes (Stateless): Decisiones basadas en IP/puerto, sin contexto.</li>
+                                <li>Stateful Inspection: Rastrea el estado de las conexiones.</li>
+                                <li>Proxy Firewall: Intermediario entre cliente y servidor.</li>
+                                <li>Next-Generation Firewall (NGFW): Incluye inspección profunda de paquetes (DPI), IDS/IPS, control de aplicaciones.</li>
+                                <li>Web Application Firewall (WAF): Protege aplicaciones web específicas (contra Inyección SQL, XSS, etc.).</li>
+                            </ul>
+                        </li>
+                        <li><strong>IDS/IPS (Intrusion Detection/Prevention System):</strong> Monitorizan el tráfico de red o actividad del sistema en busca de patrones maliciosos. IDS alerta, IPS intenta bloquear activamente.</li>
+                        <li><strong>SIEM (Security Information and Event Management):</strong> Herramienta que agrega y analiza logs de múltiples fuentes para detectar amenazas, correlacionar eventos y facilitar la respuesta a incidentes.</li>
+                        <li><strong>Pentesting (Pruebas de Penetración):</strong> Simulación controlada de ataques para identificar vulnerabilidades antes que los atacantes reales. Tipos: Black Box (sin info previa), White Box (con info completa), Gray Box (con info parcial).</li>
+                        <li><strong>Defensa en Profundidad (Defense in Depth):</strong> Estrategia de seguridad que implementa múltiples capas de controles defensivos. Si una capa falla, otra puede detener el ataque.</li>
+                        <li><strong>Zero Trust Architecture:</strong> Modelo de seguridad que asume que no se debe confiar automáticamente en ninguna entidad dentro o fuera del perímetro de red. Requiere verificación estricta para cada acceso ("Nunca confíes, siempre verifica").</li>
+                     </ul>
+                     <h4>Ingeniería Social:</h4>
+                     <ul>
+                        <li>Técnicas de manipulación psicológica para engañar a las personas y obtener información confidencial, acceso físico o hacer que realicen acciones perjudiciales. (Ver Tema 8 para detalles de técnicas como Phishing, Vishing, etc.). Es un vector de ataque muy efectivo porque explota la confianza y errores humanos.</li>
+                     </ul>
+                 </article>
+
+                 <article id="topic7" class="topic-content">
+                    <h3>7. Relación y nociones de motores de bases de datos más conocidas</h3>
+                    <p>Una Base de Datos (BD) es una colección organizada de datos. Un Sistema Gestor de Bases de Datos (SGBD o DBMS) es el software que permite a los usuarios crear, acceder, gestionar y actualizar esas bases de datos de forma eficiente y segura.</p>
+                    <h4>Modelos de Bases de Datos Principales:</h4>
+                    <ul>
+                        <li><strong>Relacionales (SQL):</strong>
+                            <ul>
+                                <li>Modelo dominante durante décadas. Organiza los datos en <strong>tablas</strong> bidimensionales (relaciones) compuestas por <strong>filas</strong> (registros o tuplas) y <strong>columnas</strong> (atributos o campos).</li>
+                                <li>Utiliza <strong>SQL (Structured Query Language)</strong> como lenguaje estándar para definición (DDL), manipulación (DML), control (DCL) y transacciones (TCL).</li>
+                                <li>Características Clave:
+                                    <ul>
+                                        <li><strong>Esquema Predefinido:</strong> La estructura de las tablas (columnas y tipos de datos) se define antes de insertar datos.</li>
+                                        <li><strong>Relaciones:</strong> Se establecen vínculos entre tablas mediante <strong>Claves Primarias</strong> (identificador único de fila en una tabla) y <strong>Claves Foráneas</strong> (columna que referencia la clave primaria de otra tabla), asegurando la <strong>integridad referencial</strong>.</li>
+                                        <li><strong>Normalización:</strong> Proceso para diseñar tablas de forma que se minimice la redundancia de datos y se mejore la integridad (ej: 1NF, 2NF, 3NF).</li>
+                                        <li><strong>Transacciones ACID:</strong> Garantizan la fiabilidad de las operaciones: <strong>A</strong>tomicidad (todo o nada), <strong>C</strong>onsistencia (la BD queda en estado válido), <strong>A</strong>islamiento (transacciones concurrentes no interfieren entre sí), <strong>D</strong>urabilidad (cambios confirmados son permanentes).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Ejemplos Populares (SGBD Relacionales):</strong>
+                                    <ul>
+                                        <li><strong>MySQL:</strong> Código abierto (propiedad de Oracle), muy popular para desarrollo web (LAMP/LEMP).</li>
+                                        <li><strong>PostgreSQL:</strong> Código abierto, robusto, enfocado en estándares SQL y extensibilidad. Buena reputación por su fiabilidad.</li>
+                                        <li><strong>Microsoft SQL Server:</strong> Comercial (Microsoft), fuerte presencia en entornos Windows empresariales.</li>
+                                        <li><strong>Oracle Database:</strong> Comercial (Oracle), líder en grandes corporaciones, muy potente, complejo y costoso.</li>
+                                        <li><strong>SQLite:</strong> Código abierto, base de datos embebida (sin servidor, contenida en un solo archivo). Ideal para aplicaciones móviles, de escritorio o con poca concurrencia.</li>
+                                        <li><strong>MariaDB:</strong> Código abierto, fork de MySQL creado por desarrolladores originales, alta compatibilidad con MySQL.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>No Relacionales (NoSQL - "Not Only SQL"):</strong>
+                            <ul>
+                                <li>Surgieron para manejar desafíos no abordados eficientemente por BD relacionales: grandes volúmenes de datos (Big Data), datos no estructurados o semi-estructurados, alta escalabilidad horizontal y disponibilidad.</li>
+                                <li>Características Generales: Esquema flexible o sin esquema, escalabilidad horizontal (añadir más servidores), alta disponibilidad, modelos de datos diversos. A menudo priorizan la disponibilidad y partición sobre la consistencia estricta (Teorema CAP - Consistencia, Disponibilidad, Tolerancia a Particiones; BASE - Basically Available, Soft state, Eventually consistent).</li>
+                                <li><strong>Tipos y Ejemplos Populares:</strong>
+                                    <ul>
+                                        <li><strong>Documentales:</strong> Almacenan datos en documentos flexibles (JSON, BSON, XML). Cada documento puede tener su propia estructura. Ej: <strong>MongoDB</strong>, Couchbase, ArangoDB.</li>
+                                        <li><strong>Clave-Valor (Key-Value):</strong> El modelo más simple. Almacenan datos como pares de una clave única y un valor (que puede ser cualquier cosa). Muy rápidas para lecturas/escrituras simples. Ej: <strong>Redis</strong>, Memcached, Riak KV. Usadas a menudo para caché.</li>
+                                        <li><strong>Columnares (Wide-Column):</strong> Optimizadas para leer/escribir grandes cantidades de datos por columnas en lugar de filas. Eficientes para análisis y agregaciones sobre columnas específicas. Ej: <strong>Cassandra</strong>, HBase, Google Bigtable.</li>
+                                        <li><strong>Grafos:</strong> Diseñadas para almacenar entidades (nodos) y las relaciones (aristas) entre ellas. Optimizadas para consultas que navegan estas relaciones complejas. Ej: <strong>Neo4j</strong>, Amazon Neptune, JanusGraph. Usadas en redes sociales, detección de fraude, sistemas de recomendación.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>Conceptos Clave Adicionales:</h4>
+                    <ul>
+                        <li><strong>SQL (Structured Query Language):</strong> Lenguaje declarativo para BD relacionales.
+                            <ul>
+                                <li><strong>DDL (Data Definition Language):</strong> `CREATE`, `ALTER`, `DROP` (para definir/modificar/eliminar tablas, bases de datos, índices).</li>
+                                <li><strong>DML (Data Manipulation Language):</strong> `SELECT` (consultar), `INSERT` (añadir filas), `UPDATE` (modificar filas), `DELETE` (eliminar filas).</li>
+                                <li><strong>DCL (Data Control Language):</strong> `GRANT` (dar permisos), `REVOKE` (quitar permisos).</li>
+                                <li><strong>TCL (Transaction Control Language):</strong> `COMMIT` (confirmar transacción), `ROLLBACK` (deshacer transacción), `SAVEPOINT`.</li>
+                                <li><strong>JOINs:</strong> Cláusulas (`INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`) para combinar filas de dos o más tablas basándose en una columna relacionada.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Índice (Index):</strong> Estructura de datos auxiliar (ej: árbol B) que mejora la velocidad de las operaciones de búsqueda (`SELECT`) en una tabla, a costa de ralentizar un poco las inserciones/actualizaciones y ocupar espacio adicional.</li>
+                        <li><strong>Vista (View):</strong> Consulta SQL almacenada que se presenta como una tabla virtual. Simplifica consultas complejas, proporciona seguridad (ocultando columnas/filas).</li>
+                        <li><strong>Procedimiento Almacenado (Stored Procedure):</strong> Bloque de código SQL precompilado y almacenado en la BD que puede ser ejecutado por su nombre. Mejora rendimiento y reutilización de lógica.</li>
+                        <li><strong>Disparador (Trigger):</strong> Procedimiento que se ejecuta automáticamente en respuesta a ciertos eventos en una tabla (ej: antes/después de un `INSERT`, `UPDATE` o `DELETE`).</li>
+                        <li><strong>Concurrencia y Bloqueos:</strong> Mecanismos que usan los SGBD para gestionar el acceso simultáneo de múltiples usuarios a los mismos datos, evitando conflictos (ej: bloqueos a nivel de fila, tabla).</li>
+                        <li><strong>Replicación:</strong> Proceso de copiar datos de un servidor de BD (maestro) a otros (esclavos) para mejorar la disponibilidad (lectura desde esclavos) y tolerancia a fallos.</li>
+                        <li><strong>Sharding (Particionamiento Horizontal):</strong> Técnica para dividir una tabla muy grande en múltiples tablas más pequeñas (shards), a menudo distribuidas en diferentes servidores, para mejorar el rendimiento y la escalabilidad. Común en NoSQL, también posible en SQL.</li>
+                        <li><strong>SQL Injection:</strong> Vulnerabilidad de seguridad donde un atacante inserta código SQL malicioso en una entrada de datos (ej: formulario web) para manipular la base de datos. Una de las amenazas más graves para aplicaciones web.</li>
+                    </ul>
+                 </article>
+
+                <article id="topic8" class="topic-content">
+                    <h3>8. Definiciones de principales técnicas de fraudes informáticos</h3>
+                    <p>El fraude informático abarca una amplia gama de actividades delictivas que utilizan la tecnología (computadoras, redes, internet) para obtener ganancias ilícitas, causar pérdidas a terceros o cometer otros actos ilegales. Muchas de estas técnicas se basan en la ingeniería social y la explotación de vulnerabilidades técnicas o humanas.</p>
+                    <h4>Técnicas Basadas en Ingeniería Social y Engaño:</h4>
+                    <ul>
+                        <li><strong>Phishing:</strong>
+                            <ul>
+                                <li>Forma más común. Suplantación de identidad de una entidad confiable (banco, red social, servicio gubernamental, empresa) a través de correo electrónico, mensajes o sitios web falsos. El objetivo es engañar a la víctima para que revele información sensible (credenciales de acceso, números de tarjeta, RUT, datos personales) o haga clic en enlaces maliciosos.</li>
+                                <li><strong>Spear Phishing:</strong> Ataque dirigido y personalizado a un individuo o grupo específico (ej: empleados de una empresa), utilizando información previamente recopilada sobre ellos para hacer el engaño más creíble.</li>
+                                <li><strong>Whaling:</strong> Spear phishing dirigido a objetivos de alto perfil ("peces gordos"), como CEOs, CFOs u otros ejecutivos.</li>
+                                <li><strong>Vishing (Voice Phishing):</strong> Phishing realizado a través de llamadas telefónicas. El estafador se hace pasar por alguien de confianza (soporte técnico, banco, policía) para obtener información o inducir a una acción.</li>
+                                <li><strong>Smishing (SMS Phishing):</strong> Phishing realizado a través de mensajes de texto (SMS) o aplicaciones de mensajería instantánea.</li>
+                                <li><strong>Angler Phishing:</strong> Uso de cuentas falsas de atención al cliente en redes sociales para interceptar quejas de usuarios y solicitarles información sensible.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ingeniería Social (Técnicas Generales):</strong>
+                            <ul>
+                                <li><strong>Pretexting:</strong> Crear un escenario o pretexto inventado (ej: ser un compañero de trabajo, un técnico, un encuestador) para justificar la solicitud de información o acceso.</li>
+                                <li><strong>Baiting (Cebo):</strong> Dejar un dispositivo infectado (ej: USB) en un lugar visible o ofrecer una descarga atractiva (película, software pirata) para tentar a la víctima a introducir malware en su sistema.</li>
+                                <li><strong>Tailgating / Piggybacking:</strong> Seguir a una persona autorizada para ingresar a un área física restringida sin presentar credenciales.</li>
+                                <li><strong>Quid pro quo ("Algo por algo"):</strong> Ofrecer un supuesto beneficio o servicio (ej: ayuda técnica falsa) a cambio de información o credenciales.</li>
+                                <li><strong>Watering Hole ("Abrevadero"):</strong> Comprometer un sitio web legítimo que es frecuentado por el grupo objetivo del atacante, infectando a los visitantes.</li>
+                                <li><strong>Romance Scams (Estafas Románticas):</strong> Crear perfiles falsos en sitios de citas o redes sociales para establecer una relación emocional con la víctima y luego solicitar dinero bajo diversos pretextos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Estafas de Soporte Técnico:</strong> Falsos técnicos contactan a la víctima (mediante pop-ups alarmantes, llamadas en frío) alegando detectar problemas graves en su computador. El objetivo es vender software inútil/malware, obtener acceso remoto o robar información de pago.</li>
+                        <li><strong>Fraude de Facturas Falsas / BEC (Business Email Compromise) / Fraude del CEO:</strong> Ataques dirigidos a empresas. Los atacantes comprometen o suplantan cuentas de correo de ejecutivos o proveedores para engañar a empleados (generalmente de finanzas) y que realicen transferencias urgentes a cuentas controladas por los estafadores, o para que revelen información confidencial.</li>
+                    </ul>
+                    <h4>Técnicas Basadas en Malware y Explotación Técnica:</h4>
+                    <ul>
+                        <li><strong>Uso de Malware Específico para Fraude:</strong>
+                            <ul>
+                                <li><strong>Keyloggers:</strong> Capturan pulsaciones de teclado.</li>
+                                <li><strong>Troyanos Bancarios (Bankers):</strong> Diseñados para robar credenciales de banca online, a menudo interceptando o modificando sesiones web.</li>
+                                <li><strong>Infostealers:</strong> Malware genérico que busca y extrae información valiosa (contraseñas guardadas en navegadores, datos de tarjetas, documentos).</li>
+                                <li><strong>Ransomware:</strong> Usado para extorsión directa.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Skimming:</strong>
+                            <ul>
+                                <li><strong>Físico:</strong> Instalar dispositivos ocultos (skimmers) en cajeros automáticos (ATM) o terminales de punto de venta (POS) para copiar los datos de la banda magnética de las tarjetas. A menudo se combina con microcámaras o teclados falsos para capturar el PIN.</li>
+                                <li><strong>Digital (e-Skimming, Magecart):</strong> Inyectar código malicioso en sitios web de comercio electrónico para robar datos de tarjetas de crédito durante el proceso de pago online.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Pharming:</strong> Redirigir a los usuarios de un sitio web legítimo a uno falso sin su conocimiento, manipulando la resolución de nombres DNS (DNS Poisoning) o modificando el archivo `hosts` local de la víctima. El sitio falso captura las credenciales.</li>
+                        <li><strong>Ataques Man-in-the-Middle (MitM):</strong> Interceptar secretamente la comunicación entre dos partes (ej: usuario y sitio web). Permite al atacante leer, insertar o modificar mensajes/datos, por ejemplo, para robar credenciales o manipular transacciones. Común en redes Wi-Fi públicas no seguras.</li>
+                        <li><strong>Credential Stuffing:</strong> Ataque automatizado que prueba grandes listas de credenciales robadas (usuario/contraseña de filtraciones anteriores) en múltiples sitios web, aprovechando la reutilización de contraseñas por parte de los usuarios.</li>
+                        <li><strong>SIM Swapping:</strong> Engañar al proveedor de telefonía móvil para que transfiera el número de teléfono de la víctima a una tarjeta SIM controlada por el atacante. Esto permite interceptar códigos de verificación (2FA) enviados por SMS y acceder a cuentas bancarias, correos, etc.</li>
+                        <li><strong>Manipulación de Datos / Sistemas:</strong> Alterar, introducir o borrar datos en un sistema informático para obtener un beneficio (ej: modificar saldos de cuentas, cambiar calificaciones, eliminar registros de deuda).</li>
+                        <li><strong>Fraude de Pagos Online:</strong> Uso de números de tarjeta de crédito/débito robados (obtenidos por phishing, skimming, malware, etc.) para realizar compras no autorizadas en línea.</li>
+                        <li><strong>Deepfakes y Fraude de Identidad:</strong> Uso de inteligencia artificial para crear videos o audios falsos pero realistas de personas (ej: un CEO autorizando una transferencia), usados para engaño y fraude. Aún emergente pero creciente.</li>
+                    </ul>
+                     <h4>Prevención General:</h4>
+                     <ul>
+                        <li>Combinación de medidas técnicas (antivirus, firewalls, MFA, parches) y concienciación del usuario (reconocer intentos de phishing, verificar solicitudes inusuales, no compartir información sensible).</li>
+                        <li>Monitoreo de cuentas bancarias y tarjetas.</li>
+                        <li>Uso de contraseñas únicas y fuertes.</li>
+                        <li>Verificación de URLs y remitentes de correo.</li>
+                        <li>Precaución en redes Wi-Fi públicas.</li>
+                     </ul>
+                </article>
+
+                <article id="topic9" class="topic-content">
+                     <h3>9. Conceptos en la Ley 21.459 de delitos informáticos (Chile)</h3>
+                     <p>La Ley N° 21.459, promulgada en Chile en 2022, representa una modernización significativa de la legislación penal en materia de ciberdelitos. Derogó la antigua Ley 19.223 y adaptó la normativa chilena al <strong>Convenio de Budapest sobre Ciberdelincuencia</strong>, el principal tratado internacional en esta materia, facilitando la cooperación internacional y estableciendo un marco más robusto para la investigación y sanción de estos ilícitos.</p>
+                     <p><strong>Objetivos Clave de la Ley:</strong></p>
+                     <ul>
+                         <li>Tipificar penalmente conductas específicas que atentan contra la confidencialidad, integridad y disponibilidad de los sistemas y datos informáticos.</li>
+                         <li>Sancionar el fraude cometido a través de medios informáticos.</li>
+                         <li>Regular herramientas y técnicas especiales de investigación adaptadas al entorno digital.</li>
+                         <li>Establecer la responsabilidad penal de las personas jurídicas (empresas) en ciertos casos.</li>
+                         <li>Fortalecer la cooperación internacional en la lucha contra la ciberdelincuencia.</li>
+                     </ul>
+                     <h4>Principales Figuras Delictivas (Artículos Clave):</h4>
+                     <p>La ley define varios delitos específicos. Es crucial entender la conducta que se sanciona en cada caso:</p>
+                     <ul>
+                         <li><strong>Artículo 1: Ataque a la integridad de un sistema informático.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Obstaculizar o impedir el funcionamiento normal (total o parcial) de un sistema informático.</li>
+                                 <li><strong>Medios:</strong> Introducir, transmitir, dañar, deteriorar, alterar o suprimir datos informáticos.</li>
+                                 <li><strong>Bien jurídico protegido:</strong> La funcionalidad y operatividad de los sistemas informáticos.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Lanzar ataques de Denegación de Servicio (DoS/DDoS), infectar un sistema con malware que lo inutilice.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 2: Acceso ilícito.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Acceder a un sistema informático, o parte de él, sin autorización o excediendo la que se posee.</li>
+                                 <li><strong>Bien jurídico protegido:</strong> La privacidad y confidencialidad de la información contenida en los sistemas.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Entrar a una cuenta de correo ajena sin permiso, vulnerar las defensas de un servidor para ingresar, usar credenciales robadas.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 3: Interceptación ilícita.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Interceptar, interrumpir o interferir, por medios técnicos, transmisiones no públicas de datos informáticos (entre sistemas, dentro de un sistema, o desde/hacia él).</li>
+                                 <li><strong>Bien jurídico protegido:</strong> El secreto de las comunicaciones realizadas por medios informáticos.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Usar un sniffer en una red Wi-Fi para capturar datos ajenos, intervenir comunicaciones de mensajería.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 4: Ataque a la integridad de los datos informáticos.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Destruir, dañar, deteriorar, alterar, suprimir o hacer inaccesibles datos informáticos sin autorización.</li>
+                                 <li><strong>Bien jurídico protegido:</strong> La integridad (exactitud, no alteración) y disponibilidad de los datos.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Borrar archivos importantes de un servidor, modificar registros en una base de datos, cifrar datos con ransomware (aunque esto también puede caer en fraude/extorsión).</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 5: Falsificación informática.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Introducir, alterar, dañar o suprimir datos informáticos sin autorización, con la intención de que sean tomados como auténticos o para que produzcan efectos legales como si lo fueran.</li>
+                                 <li><strong>Bien jurídico protegido:</strong> La fe pública y la autenticidad de los datos y documentos electrónicos con relevancia jurídica.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Alterar un certificado digital, modificar un documento electrónico para simular una firma, crear registros falsos en una base de datos oficial.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 6: Receptación de datos informáticos.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Almacenar, importar, exportar, transportar, distribuir, vender, facilitar, adquirir u ocultar datos informáticos, sabiendo (o no pudiendo menos que saber) que provienen de los delitos de Acceso Ilícito (Art. 2), Interceptación Ilícita (Art. 3) o Ataque a la Integridad de Datos (Art. 4).</li>
+                                 <li><strong>Finalidad:</strong> Sancionar a quienes se benefician o trafican con la información obtenida ilícitamente por otros.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Comprar bases de datos robadas en la dark web, guardar archivos obtenidos tras hackear un sistema.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 7: Fraude informático.</strong>
+                             <ul>
+                                 <li><strong>Conducta:</strong> Causar un perjuicio patrimonial a otro, con ánimo de lucro, mediante la introducción, alteración, daño o supresión de datos informáticos, o la interferencia en el funcionamiento de un sistema.</li>
+                                 <li><strong>Bien jurídico protegido:</strong> El patrimonio.</li>
+                                 <li><strong>Ejemplos prácticos:</strong> Realizar transferencias bancarias no autorizadas manipulando el sistema, alterar sistemas de pago para desviar fondos, usar datos de tarjetas robadas para compras online. Cubre muchas de las estafas vistas en el Tema 8.</li>
+                             </ul>
+                         </li>
+                         <li><strong>Artículo 8: Abuso de dispositivos.</strong>
+                              <ul>
+                                  <li><strong>Conducta:</strong> Producir, vender, importar, distribuir, poseer u obtener para su uso, dispositivos, programas computacionales (software), contraseñas, códigos de acceso u otros datos similares.</li>
+                                  <li><strong>Requisito Clave:</strong> Que estos elementos hayan sido diseñados, adaptados o se utilicen principalmente con el propósito de cometer alguno de los delitos descritos en los artículos anteriores (1 a 5 y 7).</li>
+                                  <li><strong>Finalidad:</strong> Sancionar la preparación y facilitación de los ciberdelitos.</li>
+                                  <li><strong>Ejemplos prácticos:</strong> Crear o vender malware, distribuir herramientas de hacking, poseer listas de contraseñas robadas con la intención de usarlas para accesos ilícitos.</li>
+                              </ul>
+                         </li>
+                         <li><strong>Artículo 10: Responsabilidad penal de las personas jurídicas.</strong>
+                             <ul>
+                                 <li>Establece que las empresas y otras organizaciones pueden ser consideradas penalmente responsables si los delitos de la ley son cometidos directa e inmediatamente en su interés o provecho, por sus dueños, controladores, ejecutivos principales, representantes, o quienes realicen actividades de administración y supervisión, siempre que la comisión del delito sea consecuencia del incumplimiento, por parte de la entidad, de sus deberes de dirección y supervisión.</li>
+                                 <li>Se vincula con la Ley 20.393 sobre responsabilidad penal de personas jurídicas y los modelos de prevención de delitos.</li>
+                             </ul>
+                         </li>
+                     </ul>
+                     <h4>Aspectos Procesales y Herramientas de Investigación:</h4>
+                     <ul>
+                         <li><strong>Agravantes Específicas:</strong> Las penas pueden aumentar si, por ejemplo, el delito afecta servicios esenciales (agua, luz, telecomunicaciones), infraestructura crítica, sistemas estatales, se comete abusando de una posición de confianza, o si forma parte de una agrupación delictiva.</li>
+                         <li><strong>Técnicas Especiales de Investigación (reguladas y bajo autorización judicial):</strong>
+                            <ul>
+                                <li><strong>Interceptación de comunicaciones</strong> (telefónicas y telemáticas).</li>
+                                <li>Uso de <strong>agentes encubiertos informáticos</strong> y reveladores.</li>
+                                <li><strong>Entregas vigiladas</strong> electrónicas.</li>
+                                <li><strong>Obtención de datos</strong> sobre tráfico y suscriptores de servicios de comunicación.</li>
+                                <li><strong>Registro remoto</strong> de equipos informáticos.</li>
+                            </ul>
+                         </li>
+                         <li><strong>Conservación de Datos de Tráfico:</strong> Se impone a los proveedores de servicios de comunicaciones la obligación de conservar ciertos datos de tráfico (no contenido) por un período determinado (generalmente un año) para fines de investigación penal.</li>
+                         <li><strong>Cooperación Internacional:</strong> La ley refuerza los mecanismos para colaborar con autoridades de otros países en la investigación y persecución de ciberdelitos transnacionales, en línea con el Convenio de Budapest.</li>
+                     </ul>
+                     <p><strong>Nota Importante:</strong> Este es un resumen conceptual. Para un entendimiento completo y preciso, es indispensable consultar y estudiar el <strong>texto íntegro de la Ley N° 21.459</strong> y, preferiblemente, fuentes de análisis jurídico especializado.</p>
+                 </article>
+
+
+            </section>
+
+            <!-- Sección del Cuestionario (Oculta por defecto) -->
+            <section id="quiz-section" class="hidden">
+                <h2>Prueba de Conocimientos</h2>
+                <form id="quiz-form" novalidate> <!-- novalidate para manejar validación con JS -->
+                    <div id="questions-container">
+                        <!-- Las preguntas se cargarán aquí dinámicamente -->
+                        <p>Cargando preguntas...</p>
+                    </div>
+                    <button type="submit" class="submit-btn">Evaluar Respuestas</button>
+                    <button type="button" id="btn-new-quiz">Nueva Prueba</button> <!-- Botón para recargar preguntas -->
+
+                </form>
+                <div id="results-container">
+                    <!-- Los resultados se mostrarán aquí -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Herramienta de estudio para el temario PDI. Contenido referencial ampliado. Consulte fuentes oficiales y especializadas para un conocimiento experto.</p>
+        </footer>
+    </div><!-- /.container -->
+
+    <script src="script.js"></script>
+</body>
+</html>

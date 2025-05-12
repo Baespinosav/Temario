@@ -1,0 +1,221 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header {
+    border-bottom: 2px solid #0056b3; /* Azul PDI similar */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #003366; /* Azul más oscuro */
+}
+
+header nav button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header nav button:hover {
+    background-color: #ddd;
+}
+
+header nav button.active {
+    background-color: #0056b3;
+    color: white;
+    border-color: #004080;
+}
+
+/* Estilos de la sección de información */
+#info-section h2, #quiz-section h2 {
+    color: #0056b3;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.index-nav {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.index-nav h3 {
+    margin-top: 0;
+    color: #495057;
+}
+
+.index-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.index-nav ul li {
+    margin-bottom: 8px;
+}
+
+.index-nav ul li a {
+    text-decoration: none;
+    color: #0056b3;
+    transition: color 0.3s ease;
+}
+
+.index-nav ul li a:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+
+
+.topic-content {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.topic-content:last-child {
+    border-bottom: none;
+}
+
+.topic-content h3 {
+    color: #004080;
+    margin-top: 0; /* Ajuste para que no quede pegado al link */
+}
+
+.topic-content h4 {
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.topic-content ul li ul {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Estilos del cuestionario */
+#quiz-form {
+    margin-top: 20px;
+}
+
+.question-block {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.question-block p {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.question-block label {
+    display: block; /* Muestra cada opción en una línea nueva */
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.question-block input[type="radio"],
+.question-block input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.submit-btn, #btn-new-quiz {
+    display: inline-block; /* Para que estén en la misma línea si caben */
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Espacio entre botones */
+    margin-top: 10px; /* Espacio arriba */
+}
+#btn-new-quiz {
+     background-color: #ffc107; /* Amarillo/Naranja */
+     color: #333;
+}
+
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+#btn-new-quiz:hover {
+     background-color: #e0a800;
+}
+
+/* Estilos de resultados */
+#results-container {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #0056b3;
+}
+#results-container h2 {
+    margin-top: 0;
+    color: #003366;
+}
+.result-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.result-item.correct {
+    background-color: #d4edda; /* Verde claro */
+    border-left: 5px solid #28a745;
+    color: #155724;
+}
+
+.result-item.incorrect {
+    background-color: #f8d7da; /* Rojo claro */
+    border-left: 5px solid #dc3545;
+    color: #721c24;
+}
+
+.result-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* Clase Helper */
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
